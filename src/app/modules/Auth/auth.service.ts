@@ -2,6 +2,8 @@ import config from '../../config';
 import { HttpError } from '../../errors/HttpError';
 import jwt from 'jsonwebtoken';
 import { TLoginUser } from './auth.interface';
+import { TUser } from '../User/user.interface';
+import { User } from '../User/user.model';
 
 // Register a user
 const registerUser = async (payload: TUser) => {
