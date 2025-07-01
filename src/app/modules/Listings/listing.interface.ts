@@ -4,6 +4,7 @@ export type TListing = {
   title: string;
   description: string;
   price: number;
+  date?: Date;
   //   condition: 'new' | 'likeNew' | 'used' | 'refurbished';
   images: string[];
   userID?: Types.ObjectId;
@@ -21,6 +22,7 @@ export type TListing = {
     | 'productLaunch';
   //   brand?: string;
   location: string;
+  eventPosterName: string;
   //   negotiable?: 'yes' | 'no';
   //   warranty?: string;
   contactNumber?: string;

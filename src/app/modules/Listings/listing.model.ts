@@ -21,6 +21,10 @@ const listingSchema = new Schema<TListing>(
       type: Number,
       required: true,
     },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
     // condition: {
     //   type: String,
     //   enum: {
@@ -71,6 +75,10 @@ const listingSchema = new Schema<TListing>(
       type: String,
       trim: true,
       required: true,
+    },
+    eventPosterName: {
+      type: String,
+      trim: true,
     },
     // negotiable: {
     //   type: String,
