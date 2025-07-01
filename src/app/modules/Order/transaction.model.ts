@@ -21,7 +21,7 @@ const transactionSchema = new Schema<TTransaction>(
     status: {
       type: String,
       enum: {
-        values: ['pending', 'completed'],
+        values: ['pending', 'sold'],
         message: '{VALUE} is not a valid status',
       },
       default: 'pending',

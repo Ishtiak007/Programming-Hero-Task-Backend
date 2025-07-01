@@ -7,11 +7,10 @@ import { TransactionServices } from './transaction.service';
 const createTransactionController = asyncHandler(async (req, res) => {
   const transactionPayload = req.body;
   const { identifier } = req.user;
-  const { createdOrder, paymentUrl } =
-    await TransactionServices.createTransactionIntoDB(
-      transactionPayload,
-      identifier,
-    );
+  const { createdOrder } = await TransactionServices.createTransactionIntoDB(
+    transactionPayload,
+    identifier,
+  );
   const orderData =
     createdOrder instanceof Document ? createdOrder.toObject() : createdOrder;
   sendResponse(res, {
@@ -20,7 +19,6 @@ const createTransactionController = asyncHandler(async (req, res) => {
     statusCode: 201,
     data: {
       ...orderData,
-      paymentUrl,
     },
   });
 });
